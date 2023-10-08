@@ -2,11 +2,19 @@ Make use of the template from here: https://colab.research.google.com/drive/1d0s
 
 We will use T = 1000 and to evaluate your solution (cf. the T = 10 in the template for testing reasons).
 
-Make sure to stick to the "FrozenLake8x8-v1" environment loaded in the template.
+Stick to the "FrozenLake8x8-v1" environment loaded in the template.
 
 You must submit your solutions as a google colab link (make sure it gives an output in colab before you send it).
 
-Use the instructions provided in the template to run it locally on your computer if you want a visual representation using pygame.
+Use the instructions provided in the template to run it locally on your computer if you want a visual representation using pygame (optional).
+
+Before submitting, make sure that you have enabled "Anyone on the internet with the link can view" under "Share" and rename your file as "mfrl'23-PT1-your_name.ipynb".
+
+The output must be in following format:
+
+output = [(state,action)]
+
+# The game
 
 Frozen lake involves crossing a frozen lake from Start(S) to Goal(G) without falling into any Holes(H)
 by walking over the Frozen(F) lake.
