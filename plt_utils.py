@@ -81,9 +81,18 @@ def visualize_value_and_policy(v, policy):
 
 
 def intvp(vv, pp):
-    def vvap(i):
+
+    def vvap(i, row, col):
+        pos = 8*row+col
+        print(f"val({pos}) = {vv[i][pos]}")
+        print(f"for fininte horizon this is f{len(vv)-i},v{len(vv)-i}")
         visualize_value_and_policy(vv[i], pp[i])
     i_slider = widgets.IntSlider(value=0, min=0, max=min(
         len(vv), len(pp)) - 1, description='iterations')
-    interactive_plot = interactive(vvap, i=i_slider)
+    row_slider = widgets.IntSlider(
+        value=0, min=0, max=7, description='rowpos of val')
+    col_slider = widgets.IntSlider(
+        value=0, min=0, max=7, description='colpos of val')
+    interactive_plot = interactive(
+        vvap, i=i_slider, row=row_slider, col=col_slider)
     display(interactive_plot)
