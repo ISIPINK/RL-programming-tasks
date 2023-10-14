@@ -9,8 +9,8 @@ def envrandom():
 def trivial():
     return gym.make("FrozenLake8x8-v1", desc=[
         "SFFFFFFF",
-        "FFFHFFFF",
-        "FFHFFFFF",
+        "FFFFFFFF",
+        "FFFFFFFF",
         "FFFFFFFF",
         "FFFFFFFF",
         "FFFFFFFF",
@@ -29,4 +29,17 @@ def time_level():
         "FHFFHFFF",
         "FHFFHFFF",
         "FFFFHFFG",
+    ], map_name=None, is_slippery=True)
+
+
+def value_level():
+    return gym.make("FrozenLake8x8-v1", desc=[
+        "FFFFFFFH",
+        "FFHHHFHF",
+        "FHFFFFFF",
+        "FHFFFFFF",
+        "FHFFHFFF",
+        "FHFFHFFF",
+        "FHFFHFFF",
+        "FFFFHFSG",
     ], map_name=None, is_slippery=True)

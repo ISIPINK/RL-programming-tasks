@@ -6,6 +6,19 @@ from IPython.display import display
 import numpy as np
 
 
+def visv(v):
+    # Convert 'v' to a 2D numpy array
+    v_array = np.zeros((8, 8))
+    for state in v:
+        row, col = divmod(state, 8)
+        v_array[row][col] = v[state]
+
+    # plt.imshow(v_array, cmap='hot', interpolation='nearest')
+    plt.imshow(v_array, cmap='hot')
+    plt.colorbar()
+    plt.show()
+
+
 def visq(q):
     fig, axes = plt.subplots(2, 2, figsize=(10, 10))
     # Find the minimum and maximum Q-values across all actions and states
