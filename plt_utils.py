@@ -1,9 +1,10 @@
 # chatgpt helped me write this
 import matplotlib.pyplot as plt
 import ipywidgets as widgets
-from ipywidgets import interactive
+from ipywidgets import interactive, interact
 from IPython.display import display
 import numpy as np
+from scipy.sparse import find
 
 
 def visv(v):
@@ -109,3 +110,30 @@ def intvp(vv, pp):
     interactive_plot = interactive(
         vvap, i=i_slider, row=row_slider, col=col_slider)
     display(interactive_plot)
+
+
+def visualize_array(P):
+    plt.figure(figsize=(12, 4))  # Adjust the figure size as needed
+    plt.subplot(121)  # Create a subplot on the left
+    # You can choose a different colormap
+    plt.imshow(P.toarray(), cmap='viridis')
+    plt.title("viz of array")
+    plt.colorbar()
+
+
+def plot_nonzero_values(P):
+    nz = sorted(find(P)[2])
+    print(f"% non zeros = {len(nz)/64**2}")
+    plt.subplot(122)  # Create a subplot on the right
+    plt.bar(range(len(nz)), nz)
+    plt.title("size of non-zero elements")
+
+# Function for interactive visualization
+
+
+def intPP(Ps):
+    @interact(index=(0, len(Ps)-1, 1))
+    def show_array(index=0):
+        visualize_array(Ps[index])
+        plot_nonzero_values(Ps[index])
+        plt.show()

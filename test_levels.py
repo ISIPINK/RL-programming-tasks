@@ -25,7 +25,7 @@ def time_level():
         "FFHHHFHF",
         "FHFFFFFF",
         "FHFFFFFF",
-        "FHFFHFFF",
+        "FHFFFFFF",
         "FHFFHFFF",
         "FHFFHFFF",
         "FFFFHFFG",
