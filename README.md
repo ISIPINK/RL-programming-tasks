@@ -1,3 +1,6 @@
+google colab aviable at: <br>
+https://colab.research.google.com/drive/1_pnCenh4Fv1vmoBDOk9KueCE465rTtdM?usp=sharing
+
 # Programming tasks
 
 ## Programming task 1
