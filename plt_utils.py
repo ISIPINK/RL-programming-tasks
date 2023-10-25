@@ -123,7 +123,7 @@ def visualize_array(P):
 
 def plot_nonzero_values(P):
     nz = sorted(find(P)[2])
-    print(f"% non zeros = {len(nz)/64**2}")
+    print(f"% non zeros = {len(nz)/(P.shape[0])**2}")
     plt.subplot(122)  # Create a subplot on the right
     plt.bar(range(len(nz)), nz)
     plt.title("size of non-zero elements")
